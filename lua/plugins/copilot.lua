@@ -1,14 +1,27 @@
 return {
-  "hrsh7th/nvim-cmp",
-  dependencies = { "zbirenbaum/copilot-cmp" },
-  opts = function(_, opts)
-    local cmp = require("cmp")
-    opts.sources = cmp.config.sources({
-      { name = "nvim_lsp", priority = 1000 },
-      { name = "luasnip", priority = 750 },
-      { name = "buffer", priority = 500 },
-      { name = "path", priority = 250 },
-      { name = "copilot", priority = 100 }, -- 设置较低的优先级
-    })
-  end,
+  -- 1. 确保 copilot-cmp 被禁用（虽然上面的 global 变量应该已经生效，但加个双保险）
+  { "zbirenbaum/copilot-cmp", enabled = false },
+
+  -- 2. 配置 copilot.lua 开启 Ghost Text
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    opts = {
+      suggestion = {
+        enabled = true, -- 开启 Ghost Text
+        auto_trigger = true,
+        keymap = {
+          accept = "<M-\\>", -- 或者你喜欢的键位
+          next = "<M-]>",
+          prev = "<M-[>",
+        },
+      },
+      panel = { enabled = false },
+      filetypes = {
+        markdown = true,
+        help = true,
+      },
+    },
+  },
 }
