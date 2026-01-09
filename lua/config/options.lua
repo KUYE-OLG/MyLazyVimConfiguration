@@ -3,3 +3,5 @@
 -- Add any additional options here
 vim.opt.mouse = ""
 vim.g.ai_cmp = false
+vim.opt.winblend = 0
+vim.opt.pumblend = 0
