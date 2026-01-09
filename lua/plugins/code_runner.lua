@@ -12,12 +12,12 @@ return {
       --   c = "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
       --   cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
       -- },
-      mode = "float",
-      float = {
-        border = "rounded",
-        height = 0.8,
-        width = 0.8,
-      },
+      -- mode = "float",
+      -- float = {
+      --   border = "rounded",
+      --   height = 0.8,
+      --   width = 0.8,
+      -- },
     })
   end,
   keys = {
