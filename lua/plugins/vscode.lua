@@ -1,5 +1,6 @@
 -- lua/plugins/vscode.lua
 print("--- MY VSCODE PLUGIN FILE WAS LOADED ---")
+
 -- 仅在 VSCode 环境下加载此文件
 if not vim.g.vscode then
   return {}
@@ -23,13 +24,14 @@ return {
   { "folke/noice.nvim", enabled = false },
   { "rcarriga/nvim-notify", enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
-
-  -- !! 新增的、最关键的一行 !!
-  -- 彻底禁用备用文件浏览器 oil.nvim
   { "stevearc/oil.nvim", enabled = false },
-
   { "akinsho/bufferline.nvim", enabled = false },
   { "nvim-lualine/lualine.nvim", enabled = false },
-  { "echasnovski/mini.indentscope", enabled = false },
-  { "folke/snacks.nvim", enabled = false },
+
+  -- !! 修改点 1: 更新为新的插件名称 !!
+  { "nvim-mini/mini.indentscope", enabled = false },
+
+  -- !! 修改点 2: 移除对 snacks.nvim 的禁用 !!
+  -- { "folke/snacks.nvim", enabled = false },
+  -- 上面这行被注释或删除，因为 LazyVim 的核心功能依赖它。
 }
