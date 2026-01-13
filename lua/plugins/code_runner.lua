@@ -9,7 +9,7 @@ return {
       --   python = "python3 -u",
       --   typescript = "deno run",
       --   rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
-      --   c = "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
+      c = "cd $dir && clang -g $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
       --   cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
       -- },
       -- mode = "float",
